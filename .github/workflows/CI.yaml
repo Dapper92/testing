@@ -43,7 +43,7 @@ jobs:
             sed -i 's/testing/testings/' deployment.yaml
             sed -i 's/testing/testings/' service.yaml
             cat deployment.yaml
-            git remote add testcluster https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Oluwaseun186/testcluster.git
+            git remote add testcluster https://x-access-token:${{ secrets.GIT_TOKEN }}@github.com/dapper92/testcluster.git
             git add .
             git commit -m "Updated helm 1"
             git push testcluster master
