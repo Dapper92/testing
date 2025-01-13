@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-            - origin
+            - master
 permissions:
           contents: write
 jobs: 
@@ -37,7 +37,7 @@ jobs:
           run: |
             git config --global user.email "oladapper@gmail.com"
             git config --global user.name "Oladapper"
-            git clone https://github.com/Oluwaseun186/testcluster.git testcluster
+            git clone https://github.com/dapper92/testcluster.git testcluster
             cd testcluster/templates
 
             sed -i 's/testing/testings/' deployment.yaml
@@ -46,6 +46,6 @@ jobs:
             git remote add testcluster https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Oluwaseun186/testcluster.git
             git add .
             git commit -m "Updated helm 1"
-            git push https://adewumibode7:${GH_TOKEN}@github.com/Oluwaseun186/testcluster origin
+            git push testcluster master
 
                   
